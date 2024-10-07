@@ -35,7 +35,7 @@ function PasswordGenerator() {
 
   return (
     <>
-      {/* main  */}
+      {/* main: password-generator */}
       <main className="password-generator">
         <h1 className="password-generator__title">Password generator</h1>
 
