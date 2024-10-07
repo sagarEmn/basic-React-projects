@@ -11,17 +11,17 @@ function PasswordGenerator() {
 
   // password generator algorithm
   const passwordGenerator = useCallback(() => {
-    let pass = "";
+    let generatedPassword = "";
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     if (numberAllowed) str += "0123456789";
     if (charAllowed) str += "!@#$%^&*(){}[]`~";
 
     for (let i = 1; i <= length; i++) {
       let index = Math.floor(Math.random() * str.length + 1);
-      pass += str.charAt(index);
+      generatedPassword += str.charAt(index);
     }
 
-    setPassword(pass);
+    setPassword(generatedPassword);
   }, [length, numberAllowed, charAllowed, setPassword]);
 
   const copyPasswordToClipboard = () => {
