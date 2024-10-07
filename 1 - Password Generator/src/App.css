@@ -1,0 +1,11 @@
+:root {
+    /* color variables */
+    --primary-clr-900: hsl(0, 0, 10%);
+    --primary-clr-600: hsl(44, 7, 41%);
+
+    --accent-clr-400: hsl(352, 93, 53);
+    --secondary-clr-200: hsl(64, 63, 92);
+
+    --bg-clr: var(--primary-clr-900);
+}
+
