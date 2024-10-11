@@ -24,3 +24,16 @@ p, h1, h2, h3, h4, h5, h6 {
     isolation: isolate;
 }
 /* css reset */
+
+:root {
+    /* color variables */
+    --primary-clr-900: #101114;
+    --primary-clr-800: #1c1d20;
+
+    --secondary-clr-700: #4a4d57;
+    --secondary-clr-500: hsl(0, 0%, 60%);
+    --secondary-clr-100: #ffffff;
+
+    --accent-clr: #ffffff;
+    --bg-clr: var(--accent-clr);
+}
