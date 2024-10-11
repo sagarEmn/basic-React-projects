@@ -4,6 +4,8 @@
   --primary-clr-600: hsl(44, 7%, 41%);
 
   --accent-clr-400: hsl(352, 93%, 53%);
+
+  --secondary-clr-100: hsl(11, 0%, 100%);
   --secondary-clr-200: hsl(64, 63%, 92%);
 
   --bg-clr: var(--primary-clr-900);
@@ -14,4 +16,9 @@ body {
   background: var(--bg-clr);
   font-weight: 700;
   font-size: 18px;
+}
+
+input[type="text"],
+input[type="range"] {
+  background: var(--secondary-clr-100);
 }
