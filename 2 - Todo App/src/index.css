@@ -1,39 +1,75 @@
 /* css reset */
-*, *::before, *::after {
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
 }
 
-input, button, textarea, select {
-    font: inherit;
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }
 
 #root {
-    isolation: isolate;
+  isolation: isolate;
 }
 /* css reset */
 
+/* html, body width */
+html {
+  height: 100vh;
+  min-height: 100vh;
+}
+
+body {
+  height: 100%;
+}
+/* html, body width */
+
 :root {
-    /* color variables */
-    --primary-clr-900: #101114;
-    --primary-clr-800: #1c1d20;
+  /* color variables */
+  --primary-clr-900: #101114;
+  --primary-clr-800: #1c1d20;
 
-    --secondary-clr-700: #4a4d57;
-    --secondary-clr-500: hsl(0, 0%, 60%);
-    --secondary-clr-100: #ffffff;
+  --secondary-clr-700: #4a4d57;
+  --secondary-clr-500: hsl(0, 0%, 60%);
+  --secondary-clr-100: #ffffff;
 
-    --accent-clr: #ffffff;
-    --bg-clr: var(--accent-clr);
+  --accent-clr: #ffffff;
+  --bg-clr: var(--primary-clr-900);
+  --text-clr: var(--secondary-clr-100);
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  background-color: var(--bg-clr);
+  color: var(--secondary-clr-100);
+  font-size: 1rem;
+  display: flex;
+  place-items: center; 
+  place-content: center;
 }
