@@ -9,9 +9,9 @@ input[type="checkbox"] {
   gap: 1.5rem;
 }
 
-/* .check-icon {
+.check-icon {
     display: flex;
-} */
+}
 
 .todo-app__list__item__button {
   background: none;
