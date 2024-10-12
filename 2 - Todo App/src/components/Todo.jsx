@@ -92,14 +92,14 @@ function Todo() {
                     onChange={() => toggleTodo(todo.id)}
                   />
                   <div className="check-icon">
-                    <CheckIcon />
+                    <CheckIcon colorFill={'#00c105'} />
                   </div>
                   <span className="todo-app__list__item__text">{todo.text}</span>
                   <button
                     onClick={() => deleteTodo(todo.id)}
                     className="todo-app__list__item__button"
                   >
-                    <DeleteIcon />
+                    <DeleteIcon colorFill={'#d30000'} />
                   </button>
                 </li>
               );
