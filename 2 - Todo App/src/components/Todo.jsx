@@ -1,7 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 
 function Todo() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    const savedTodos = localStorage.getItem("todos");
+    return savedTodos ? JSON.parse(savedTodos) : [];
+  });
   const [inputValue, setInputValue] = useState("");
   const inputRef = useRef(null);
 
@@ -80,7 +83,7 @@ function Todo() {
           <ul className="todo-app__list">
             {console.log(todos)}
             {todos.map((todo) => {
-              return(
+              return (
                 <li key={todo.id} className="todo-app__list__item">
                   <input
                     type="checkbox"
@@ -90,8 +93,7 @@ function Todo() {
                   <span>{todo.text}</span>
                   <button onClick={() => deleteTodo(todo.id)}>Delete</button>
                 </li>
-              )
-              
+              );
             })}
           </ul>
         </section>
