@@ -77,4 +77,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  /* font */
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
