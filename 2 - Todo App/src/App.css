@@ -1,3 +1,25 @@
 input[type="checkbox"] {
-    display: none;
+  display: none;
+}
+
+.todo-app__list__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* .check-icon {
+    display: flex;
+} */
+
+.todo-app__list__item__button {
+  background: none;
+  padding: 0;
+  border: none;
+  font-size: 0;
+}
+
+.todo-app__list__item__text {
+  flex: 1;
 }

@@ -1,5 +1,5 @@
 import CheckIcon from "@/public/CheckIcon";
-import DeleteIconRandom from "@/public/DeleteIcon";
+import DeleteIcon from "@/public/DeleteIcon";
 import React, { useState, useRef, useEffect } from "react";
 
 function Todo() {
@@ -91,10 +91,15 @@ function Todo() {
                     checked={todo.completed}
                     onChange={() => toggleTodo(todo.id)}
                   />
-                  <CheckIcon />
-                  <span>{todo.text}</span>
-                  <button onClick={() => deleteTodo(todo.id)}>
-                    <DeleteIconRandom />
+                  <div className="check-icon">
+                    <CheckIcon />
+                  </div>
+                  <span className="todo-app__list__item__text">{todo.text}</span>
+                  <button
+                    onClick={() => deleteTodo(todo.id)}
+                    className="todo-app__list__item__button"
+                  >
+                    <DeleteIcon />
                   </button>
                 </li>
               );
