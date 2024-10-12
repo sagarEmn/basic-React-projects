@@ -32,14 +32,12 @@
 }
 
 .todo-app__form form button {
+  font-weight: 900;
   background: var(--accent-clr);
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   align-self: stretch; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .todo-app__form textarea,
