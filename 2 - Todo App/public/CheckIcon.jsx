@@ -1,6 +1,6 @@
 import React from "react";
 
-function CheckIcon() {
+export default function CheckIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -13,5 +13,3 @@ function CheckIcon() {
     </svg>
   );
 }
-
-export default CheckIcon;

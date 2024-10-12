@@ -1,4 +1,5 @@
-import CheckIcon from "/CheckIcon";
+import CheckIcon from "@/public/CheckIcon";
+import DeleteIconRandom from "@/public/DeleteIcon";
 import React, { useState, useRef, useEffect } from "react";
 
 function Todo() {
@@ -82,7 +83,6 @@ function Todo() {
 
         <section className="todo-app__list-section">
           <ul className="todo-app__list">
-            {console.log(todos)}
             {todos.map((todo) => {
               return (
                 <li key={todo.id} className="todo-app__list__item">
@@ -93,7 +93,9 @@ function Todo() {
                   />
                   <CheckIcon />
                   <span>{todo.text}</span>
-                  <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+                  <button onClick={() => deleteTodo(todo.id)}>
+                    <DeleteIconRandom />
+                  </button>
                 </li>
               );
             })}

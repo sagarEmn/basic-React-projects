@@ -1,6 +1,6 @@
 import React from "react";
 
-function DeleteIcon() {
+export default function DeleteIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -14,4 +14,3 @@ function DeleteIcon() {
   );
 }
 
-export default DeleteIcon;
