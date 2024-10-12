@@ -26,10 +26,27 @@
   justify-content: center;
 }
 
+.todo-app__form textarea {
+  height: 100%;
+}
+
 .todo-app__form form button {
-    background: var(--accent-clr);
-    border: none;
-    padding: .5rem 1rem;
+  background: var(--accent-clr);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: .5rem;
+}
+
+.todo-app__form textarea,
+.todo-app__form form button {
+  border-radius: .5rem; 
+  min-height: 2.5rem; /* Adjust this value as needed */
+}
+
+.todo-app__form textarea {
+  max-height: 150px; /* Prevent excessive growth */
+  resize: none; /* Allow vertical resizing */
+  padding: 1rem;
 }
 
 /* todo list styling */
