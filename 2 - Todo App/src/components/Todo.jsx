@@ -78,16 +78,20 @@ function Todo() {
 
         <section className="todo-app__list-section">
           <ul className="todo-app__list">
+            {console.log(todos)}
             {todos.map((todo) => {
-              <li key={todo.id} className="todo-app__list__item">
-                <input
-                  type="checkbox"
-                  checked={todo.completed}
-                  onChange={() => toggleTodo(todo.id)}
-                />
-                <span>{todo.text}</span>
-                <button onClick={() => deleteTodo(todo.id)}>Delete</button>
-              </li>;
+              return(
+                <li key={todo.id} className="todo-app__list__item">
+                  <input
+                    type="checkbox"
+                    checked={todo.completed}
+                    onChange={() => toggleTodo(todo.id)}
+                  />
+                  <span>{todo.text}</span>
+                  <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+                </li>
+              )
+              
             })}
           </ul>
         </section>
