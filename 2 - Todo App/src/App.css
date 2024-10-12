@@ -1,26 +1,43 @@
+/* todo app styling */
+
 .todo-app {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: min(100%, 800px);
-flex-shrink: 0;
+  width: min(100%, 600px);
   max-width: 600px;
 }
 
+/* todo header-from-container styling */
+
 .todo-app__header-form-container {
-    width: 100%;
+  width: 100%;
 }
 
-.todo-app__form {
+.todo-app__header {
+  text-align: center;
+}
+
+.todo-app__form form {
   display: flex;
+  gap: 1rem;
   align-items: center;
-  /* justify-content: center; */
+  justify-content: center;
+}
+
+.todo-app__form form button {
+    background: var(--accent-clr);
+    border: none;
+    padding: .5rem 1rem;
+    
 }
 
 /* todo list styling */
 .todo-app__list-section {
-    width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .todo-app__list__item {
