@@ -21,7 +21,7 @@
 
 .todo-app__form form {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   align-items: center;
   justify-content: center;
 }
@@ -29,6 +29,12 @@
 .todo-app__form textarea {
   resize: none;
   padding: 1rem;
+  background: var(--primary-clr-800);
+  border: 1px solid var(--secondary-clr-700);
+}
+
+.todo-app__form textarea:focus {
+  outline: none;
 }
 
 .todo-app__form form button {
