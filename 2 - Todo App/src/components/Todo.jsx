@@ -1,3 +1,4 @@
+import CheckIcon from "/CheckIcon";
 import React, { useState, useRef, useEffect } from "react";
 
 function Todo() {
@@ -90,6 +91,7 @@ function Todo() {
                     checked={todo.completed}
                     onChange={() => toggleTodo(todo.id)}
                   />
+                  <CheckIcon />
                   <span>{todo.text}</span>
                   <button onClick={() => deleteTodo(todo.id)}>Delete</button>
                 </li>
