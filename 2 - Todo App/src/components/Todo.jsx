@@ -87,13 +87,13 @@ function Todo() {
               return (
                 <li key={todo.id} className="todo-app__list__item">
                   <input
-                    id="todo-app__list__item__checkbox"
+                    id={todo.id}
                     type="checkbox"
                     checked={todo.completed}
                     onChange={() => toggleTodo(todo.id)}
                   />
                   <label
-                    htmlFor="todo-app__list__item__checkbox"
+                    htmlFor={todo.id}
                     className="check-icon icon"
                   >
                     <CheckIcon colorFill={"#00c105"} />
