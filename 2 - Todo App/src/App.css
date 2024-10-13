@@ -42,6 +42,27 @@
   scrollbar-width: none;
 }
 
+@media (max-width: 500px) {
+  .todo-app__form form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .todo-app__form textarea {
+    height: 3rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .todo-app__form textarea::placeholder {
+    line-height: 1.5;
+  }
+
+  .todo-app__form button {
+    height: 3rem;
+  }
+}
+
 .todo-app__form textarea:focus {
   outline: none;
 }
@@ -110,7 +131,8 @@ input[type="checkbox"] {
   border-radius: 50%;
 }
 
-.check-icon:hover, .todo-app__list__item__button:hover {
+.check-icon:hover,
+.todo-app__list__item__button:hover {
   background: var(--secondary-clr-700);
 }
 
