@@ -50,7 +50,7 @@ body {
 :root {
   /* color variables */
   --primary-clr-900: #101114;
-  --primary-clr-800: #1c1d20;
+  --primary-clr-800: #252629;
 
   --secondary-clr-700: #4a4d57;
   --secondary-clr-500: hsl(0, 0%, 60%);
@@ -63,7 +63,9 @@ body {
 
 #root {
   width: 100%;
-  margin: 0 auto;
+  display: flex;
+  place-items: center;
+  justify-content: center;
 }
 
 html {
@@ -73,7 +75,7 @@ html {
 body {
   background-color: var(--bg-clr);
   color: var(--secondary-clr-100);
-  font-size: 1rem;
+  font-size: 1.3rem;
   display: flex;
   justify-content: center;
   align-items: center;

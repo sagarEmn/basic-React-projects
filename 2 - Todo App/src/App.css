@@ -5,6 +5,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 2rem;
+
   width: min(100%, 600px);
   max-width: 600px;
 }
@@ -12,6 +14,9 @@
 /* todo header-from-container styling */
 
 .todo-app__header-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   width: 100%;
 }
 
@@ -30,7 +35,11 @@
   resize: none;
   padding: 1rem;
   background: var(--primary-clr-800);
+  color: var(--accent-clr);
   border: 1px solid var(--secondary-clr-700);
+  width: 100%;
+  caret-color: var(--accent-clr);
+  scrollbar-width: none;
 }
 
 .todo-app__form textarea:focus {
@@ -41,9 +50,9 @@
   font-weight: 900;
   background: var(--accent-clr);
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.4rem;
   border-radius: 0.5rem;
-  align-self: stretch; 
+  align-self: stretch;
 }
 
 .todo-app__form textarea,
@@ -54,8 +63,12 @@
 /* todo list styling */
 .todo-app__list-section {
   width: 100%;
+}
+
+.todo-app__list {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
 }
 
 .todo-app__list__item {
@@ -63,6 +76,10 @@
   justify-content: center;
   align-items: center;
   gap: 1rem;
+
+  background-color: var(--primary-clr-800);
+  padding: 0.5rem 1rem;
+  border-radius: 0.8rem;
 }
 
 input[type="checkbox"] {
@@ -70,14 +87,21 @@ input[type="checkbox"] {
 }
 
 .check-icon {
+  font-size: 1.5em;
   display: flex;
+  border: 2px solid var(--accent-clr);
+  border-radius: 50%;
+  padding: 0.1rem;
+  cursor: pointer;
 }
 
 .todo-app__list__item__button {
   background: none;
   padding: 0;
   border: none;
-  font-size: 0;
+  display: flex;
+  font-size: 1.5em;
+  cursor: pointer;
 }
 
 .todo-app__list__item__text {
