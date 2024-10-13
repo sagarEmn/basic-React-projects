@@ -97,11 +97,16 @@ input[type="checkbox"] {
 
 .todo-app__list__item__button {
   background: none;
-  padding: 0;
+  padding: 0.5rem;
   border: none;
   display: flex;
   font-size: 1.5em;
   cursor: pointer;
+  border-radius: 50%;
+}
+
+.check-icon:hover, .todo-app__list__item__button:hover {
+  background: var(--secondary-clr-700);
 }
 
 .todo-app__list__item__text {
