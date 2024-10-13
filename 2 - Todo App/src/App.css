@@ -123,6 +123,10 @@ input[type="checkbox"] {
   display: none;
 }
 
+input[type="checkbox"]:checked ~ .todo-app__list__item__text {
+  text-decoration: line-through;
+}
+
 .check-icon {
   font-size: clamp(1.1rem, 4vw, 1.5rem);
   display: flex;

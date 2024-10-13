@@ -93,7 +93,7 @@ function Todo() {
                     onChange={() => toggleTodo(todo.id)}
                   />
                   <label
-                    for="todo-app__list__item__checkbox"
+                    htmlFor="todo-app__list__item__checkbox"
                     className="check-icon icon"
                   >
                     <CheckIcon colorFill={"#00c105"} />
