@@ -49,7 +49,7 @@ function Todo() {
   const toggleTodo = (id) => {
     setTodos(
       todos.map((todo) => {
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo;
+        return todo.id === id ? { ...todo, completed: !todo.completed } : todo;
       })
     );
   };
@@ -87,19 +87,25 @@ function Todo() {
               return (
                 <li key={todo.id} className="todo-app__list__item">
                   <input
+                    id="todo-app__list__item__checkbox"
                     type="checkbox"
                     checked={todo.completed}
                     onChange={() => toggleTodo(todo.id)}
                   />
-                  <div className="check-icon">
-                    <CheckIcon colorFill={'#00c105'} />
-                  </div>
-                  <span className="todo-app__list__item__text">{todo.text}</span>
+                  <label
+                    for="todo-app__list__item__checkbox"
+                    className="check-icon"
+                  >
+                    <CheckIcon colorFill={"#00c105"} />
+                  </label>
+                  <span className="todo-app__list__item__text">
+                    {todo.text}
+                  </span>
                   <button
                     onClick={() => deleteTodo(todo.id)}
                     className="todo-app__list__item__button"
                   >
-                    <DeleteIcon colorFill={'#d30000'} />
+                    <DeleteIcon colorFill={"#d30000"} />
                   </button>
                 </li>
               );
