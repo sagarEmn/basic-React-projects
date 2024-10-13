@@ -64,7 +64,7 @@ function Todo() {
         {/* header-form container */}
         <div className="todo-app__header-form-container">
           <header>
-            <h1 className="todo-app__header">Todo React App</h1>
+            <h1 className="todo-app__header">Todo App</h1>
           </header>
 
           <section className="todo-app__form">
@@ -94,7 +94,7 @@ function Todo() {
                   />
                   <label
                     for="todo-app__list__item__checkbox"
-                    className="check-icon"
+                    className="check-icon icon"
                   >
                     <CheckIcon colorFill={"#00c105"} />
                   </label>
@@ -103,7 +103,7 @@ function Todo() {
                   </span>
                   <button
                     onClick={() => deleteTodo(todo.id)}
-                    className="todo-app__list__item__button"
+                    className="todo-app__list__item__button icon"
                   >
                     <DeleteIcon colorFill={"#d30000"} />
                   </button>

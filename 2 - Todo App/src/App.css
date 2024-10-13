@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 2rem;
 
   width: min(100%, 600px);
@@ -21,7 +21,14 @@
 }
 
 .todo-app__header {
+  margin-top: 2rem;
   text-align: center;
+}
+
+@media (min-width: 500px) {
+  .todo-app__header {
+    margin-top: 10rem;
+  }
 }
 
 .todo-app__form form {
@@ -43,6 +50,10 @@
 }
 
 @media (max-width: 500px) {
+  .todo-app__header {
+    font-size: min(15vw, 3rem);
+  }
+
   .todo-app__form form {
     display: flex;
     flex-direction: column;
@@ -60,6 +71,10 @@
 
   .todo-app__form button {
     height: 3rem;
+  }
+
+  .todo-app__list__item__text {
+    font-size: 7vw;
   }
 }
 
@@ -109,11 +124,11 @@ input[type="checkbox"] {
 }
 
 .check-icon {
-  font-size: 1.5em;
+  font-size: clamp(1.1rem, 4vw, 1.5rem);
   display: flex;
   border: 2px solid var(--secondary-clr-500);
   border-radius: 50%;
-  padding: 0.1rem;
+  padding: clamp(0.1rem, 0.5vw, 0.3rem);
   cursor: pointer;
 }
 
@@ -123,10 +138,10 @@ input[type="checkbox"] {
 
 .todo-app__list__item__button {
   background: none;
-  padding: 0.5rem;
+  padding: clamp(0.2rem, 1vw, 0.5rem);
   border: none;
   display: flex;
-  font-size: 1.5em;
+  font-size: clamp(1.3rem, 4vw, 1.5rem);
   cursor: pointer;
   border-radius: 50%;
 }

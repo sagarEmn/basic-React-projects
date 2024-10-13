@@ -64,8 +64,9 @@ body {
 #root {
   width: 100%;
   display: flex;
-  place-items: center;
+  align-items: flex-start;
   justify-content: center;
+  height: 100%;
 }
 
 html {
