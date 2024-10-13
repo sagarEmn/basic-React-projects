@@ -53,6 +53,7 @@
   padding: 0.5rem 1.4rem;
   border-radius: 0.5rem;
   align-self: stretch;
+  cursor: pointer;
 }
 
 .todo-app__form textarea,
@@ -89,10 +90,14 @@ input[type="checkbox"] {
 .check-icon {
   font-size: 1.5em;
   display: flex;
-  border: 2px solid var(--accent-clr);
+  border: 2px solid var(--secondary-clr-500);
   border-radius: 50%;
   padding: 0.1rem;
   cursor: pointer;
+}
+
+.check-icon:hover {
+  border: 2px solid var(--accent-clr);
 }
 
 .todo-app__list__item__button {
