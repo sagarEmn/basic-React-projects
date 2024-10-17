@@ -34,7 +34,7 @@ export default function Form({todos, setTodos }) {
         placeholder="Write a todo..."
         rows={1}
       />
-      <button type="submit">ADD</button>
+      <button type="submit">添加</button>
     </form>
   );
 }

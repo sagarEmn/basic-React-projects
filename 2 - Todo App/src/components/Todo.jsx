@@ -44,7 +44,9 @@ function Todo() {
         {/* header-form container */}
         <div className="todo-app__header-form-container">
           <header>
-            <h1 className="todo-app__header">记事本</h1>
+            <h1 className="todo-app__header">记事本
+              <p className="credit">创造者-Sagar</p>
+            </h1>
           </header>
 
           <section className="todo-app__form">

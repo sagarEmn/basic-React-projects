@@ -163,3 +163,7 @@ input[type="checkbox"]:checked ~ .check-icon {
 .todo-app__list__item__text {
   flex: 1;
 }
+
+.credit {
+  font-size: .8rem;
+}
