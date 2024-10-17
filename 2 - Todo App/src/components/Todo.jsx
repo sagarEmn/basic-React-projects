@@ -1,14 +1,13 @@
-import CheckIcon from "@/public/CheckIcon";
-import DeleteIcon from "@/public/DeleteIcon";
 import React, { useState, useRef, useEffect } from "react";
+
+import TodoList from "./TodoList";
+import Form from "./Form.jsx";
 
 function Todo() {
   const [todos, setTodos] = useState(() => {
     const savedTodos = localStorage.getItem("todos");
     return savedTodos ? JSON.parse(savedTodos) : [];
   });
-  const [inputValue, setInputValue] = useState("");
-  const inputRef = useRef(null);
 
   useEffect(() => {
     loadTodos();
@@ -25,25 +24,6 @@ function Todo() {
 
   const saveTodos = () => {
     localStorage.setItem("todos", JSON.stringify(todos));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (inputValue.trim(" ")) {
-      const newTodo = {
-        id: crypto.randomUUID(),
-        text: inputValue.trim(),
-        completed: false,
-      };
-      setTodos([...todos, newTodo]);
-      setInputValue("");
-    }
-  };
-
-  const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-    e.target.style.height = "auto";
-    e.target.style.height = `${e.target.scrollHeight}px`;
   };
 
   const toggleTodo = (id) => {
@@ -68,49 +48,16 @@ function Todo() {
           </header>
 
           <section className="todo-app__form">
-            <form onSubmit={handleSubmit}>
-              <textarea
-                ref={inputRef}
-                value={inputValue}
-                onChange={handleInputChange}
-                placeholder="Write a todo..."
-                rows={1}
-              />
-              <button type="submit">ADD</button>
-            </form>
+            <Form />
           </section>
         </div>
 
         <section className="todo-app__list-section">
-          <ul className="todo-app__list">
-            {todos.map((todo) => {
-              return (
-                <li key={todo.id} className="todo-app__list__item">
-                  <input
-                    id={todo.id}
-                    type="checkbox"
-                    checked={todo.completed}
-                    onChange={() => toggleTodo(todo.id)}
-                  />
-                  <label
-                    htmlFor={todo.id}
-                    className="check-icon icon"
-                  >
-                    <CheckIcon colorFill={"#00c105"} />
-                  </label>
-                  <span className="todo-app__list__item__text">
-                    {todo.text}
-                  </span>
-                  <button
-                    onClick={() => deleteTodo(todo.id)}
-                    className="todo-app__list__item__button icon"
-                  >
-                    <DeleteIcon colorFill={"#d30000"} />
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
+          <TodoList
+            todos={todos}
+            toggleTodo={toggleTodo}
+            deleteTodo={deleteTodo}
+          />
         </section>
       </main>
     </>
