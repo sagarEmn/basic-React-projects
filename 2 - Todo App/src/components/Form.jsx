@@ -31,7 +31,7 @@ export default function Form({todos, setTodos }) {
         ref={inputRef}
         value={inputValue}
         onChange={handleInputChange}
-        placeholder="Write a todo..."
+        placeholder="写下你想要做的事吧..."
         rows={1}
       />
       <button type="submit">添加</button>
