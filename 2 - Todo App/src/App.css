@@ -125,6 +125,11 @@ input[type="checkbox"] {
 
 input[type="checkbox"]:checked ~ .todo-app__list__item__text {
   text-decoration: line-through;
+  color: var(--secondary-clr-500);
+}
+
+input[type="checkbox"]:checked ~ .check-icon {
+  background: var(--secondary-clr-700);
 }
 
 .check-icon {

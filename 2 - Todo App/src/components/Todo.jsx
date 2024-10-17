@@ -44,7 +44,7 @@ function Todo() {
         {/* header-form container */}
         <div className="todo-app__header-form-container">
           <header>
-            <h1 className="todo-app__header">Todo App</h1>
+            <h1 className="todo-app__header"></h1>
           </header>
 
           <section className="todo-app__form">
