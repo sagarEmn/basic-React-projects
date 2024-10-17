@@ -1,7 +1,11 @@
 import React from "react";
 import { useState, useRef } from "react";
 
-export default function Form() {
+export default function Form({todos, setTodos }) {
+  const [inputValue, setInputValue] = useState("");
+
+  const inputRef = useRef(null);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (inputValue.trim(" ")) {
@@ -20,9 +24,6 @@ export default function Form() {
     e.target.style.height = "auto";
     e.target.style.height = `${e.target.scrollHeight}px`;
   };
-
-  const [inputValue, setInputValue] = useState("");
-  const inputRef = useRef(null);
 
   return (
     <form onSubmit={handleSubmit}>

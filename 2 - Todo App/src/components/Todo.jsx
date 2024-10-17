@@ -48,7 +48,7 @@ function Todo() {
           </header>
 
           <section className="todo-app__form">
-            <Form />
+            <Form todos={todos} setTodos={setTodos} />
           </section>
         </div>
 
