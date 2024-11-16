@@ -1,11 +1,12 @@
 import './App.css'
+import Weather from './components/Weather'
 
 function App() {
  
 
   return (
     <>
-    <h1>Heading 1</h1>
+    <Weather />
     </>
   )
 }
