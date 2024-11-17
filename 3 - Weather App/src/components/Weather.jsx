@@ -65,22 +65,22 @@ function Weather() {
       </section>
       <section className="weather-details">
         <img src={clear_icon} alt="" className="weather-icon" />
-        <p className="temperature">16 C</p>
-        <p className="location">Banepa</p>
+        <p className="temperature">{weatherData.temperature} °C</p>
+        <p className="location">{weatherData.location}</p>
       </section>
 
       <section className="weather-data">
         <div className="col">
           <img src={humidity_icon} alt="" />
           <div>
-            <p>91 %</p>
+            <p>{weatherData.humidity}</p>
             <span>Humidity</span>
           </div>
         </div>
         <div className="col">
           <img src={wind_icon} alt="" />
           <div>
-            <p>3.6 Km/h</p>
+            <p>{weatherData.windSpeed} Km/h</p>
             <span>Wind Speed</span>
           </div>
         </div>
