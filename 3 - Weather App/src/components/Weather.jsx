@@ -64,7 +64,7 @@ function Weather() {
         <img src={search_icon} alt="" />
       </section>
       <section className="weather-details">
-        <img src={clear_icon} alt="" className="weather-icon" />
+        <img src={weatherData.icon} alt="" className="weather-icon" />
         <p className="temperature">{weatherData.temperature} °C</p>
         <p className="location">{weatherData.location}</p>
       </section>
