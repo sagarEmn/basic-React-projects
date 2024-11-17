@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Weather.css";
 
 // import images
@@ -14,6 +14,22 @@ import humidity_icon from "../assets/images/humidity.png";
 function Weather() {
   const [weatherData, setWeatherData] = useState(false);
 
+  const allIcons = {
+    "01d": clear_icon,
+    "01n": clear_icon,
+    "02d": cloud_icon,
+    "02n": cloud_icon,
+    "03d": cloud_icon,
+    "03n": cloud_icon,
+    "04d": drizzle_icon,
+    "09d": rain_icon,
+    "09n": rain_icon,
+    "10d": rain_icon,
+    "10n": rain_icon,
+    "13d": snow_icon,
+    "13n": snow_icon,
+  };
+
   // fetch api response
   const search = async (city) => {
     try {
@@ -24,11 +40,15 @@ function Weather() {
       const response = await fetch(url);
       const data = await response.json();
       console.log(data);
+
+      const icon = allIcons[data.weather[0].icon] || clear_icon;
+
       setWeatherData({
         humidity: data.main.humidity,
         windSpeed: data.wind.speed,
         temperature: Math.floor(data.main.temp),
         location: data.name,
+        icon: icon,
       });
     } catch (error) {}
   };
