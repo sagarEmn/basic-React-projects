@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Weather.css";
 
 // import images
@@ -12,6 +12,7 @@ import wind_icon from "../assets/images/wind.png";
 import humidity_icon from "../assets/images/humidity.png";
 
 function Weather() {
+  const inputRef = useRef();
   const [weatherData, setWeatherData] = useState(false);
 
   const allIcons = {
@@ -32,6 +33,10 @@ function Weather() {
 
   // fetch api response
   const search = async (city) => {
+    if (city === "") {
+      alert("Enter City Name");
+      return;
+    }
     try {
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${
         import.meta.env.VITE_APP_ID
@@ -39,6 +44,12 @@ function Weather() {
 
       const response = await fetch(url);
       const data = await response.json();
+
+      if (!response.ok) {
+        alert(data.message);
+        return;
+      }
+
       console.log(data);
 
       const icon = allIcons[data.weather[0].icon] || clear_icon;
@@ -50,7 +61,10 @@ function Weather() {
         location: data.name,
         icon: icon,
       });
-    } catch (error) {}
+    } catch (error) {
+      setWeatherData(false);
+      console.log("Error in fetching weather data");
+    }
   };
 
   useEffect(() => {
@@ -60,31 +74,42 @@ function Weather() {
   return (
     <main className="weather">
       <section className="search-bar">
-        <input type="text" name="city" placeholder="search" />
-        <img src={search_icon} alt="" />
-      </section>
-      <section className="weather-details">
-        <img src={weatherData.icon} alt="" className="weather-icon" />
-        <p className="temperature">{weatherData.temperature} °C</p>
-        <p className="location">{weatherData.location}</p>
+        <input ref={inputRef} type="text" name="city" placeholder="Search" />
+        <img
+          src={search_icon}
+          alt=""
+          onClick={() => search(inputRef.current.value)}
+        />
       </section>
 
-      <section className="weather-data">
-        <div className="col">
-          <img src={humidity_icon} alt="" />
-          <div>
-            <p>{weatherData.humidity}</p>
-            <span>Humidity</span>
-          </div>
-        </div>
-        <div className="col">
-          <img src={wind_icon} alt="" />
-          <div>
-            <p>{weatherData.windSpeed} Km/h</p>
-            <span>Wind Speed</span>
-          </div>
-        </div>
-      </section>
+      {weatherData ? (
+        <>
+          <section className="weather-details">
+            <img src={weatherData.icon} alt="" className="weather-icon" />
+            <p className="temperature">{weatherData.temperature} °C</p>
+            <p className="location">{weatherData.location}</p>
+          </section>
+
+          <section className="weather-data">
+            <div className="col">
+              <img src={humidity_icon} alt="" />
+              <div>
+                <p>{weatherData.humidity}</p>
+                <span>Humidity</span>
+              </div>
+            </div>
+            <div className="col">
+              <img src={wind_icon} alt="" />
+              <div>
+                <p>{weatherData.windSpeed} Km/h</p>
+                <span>Wind Speed</span>
+              </div>
+            </div>
+          </section>
+        </>
+      ) : (
+        <></>
+      )}
     </main>
   );
 }
