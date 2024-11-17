@@ -27,6 +27,8 @@ function Weather() {
       setWeatherData({
         humidity: data.main.humidity,
         windSpeed: data.wind.speed,
+        temperature: Math.floor(data.main.temp),
+        location: data.name,
       });
     } catch (error) {}
   };
