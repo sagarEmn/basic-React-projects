@@ -12,22 +12,28 @@ import wind_icon from "../assets/images/wind.png";
 import humidity_icon from "../assets/images/humidity.png";
 
 function Weather() {
+  const [weatherData, setWeatherData] = useState(false);
 
+  // fetch api response
   const search = async (city) => {
     try {
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${import.meta.env.VITE_APP_ID}`
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${
+        import.meta.env.VITE_APP_ID
+      }`;
 
       const response = await fetch(url);
       const data = await response.json();
       console.log(data);
-    } catch (error) {
-
-    }
-  }
+      setWeatherData({
+        humidity: data.main.humidity,
+        windSpeed: data.wind.speed,
+      });
+    } catch (error) {}
+  };
 
   useEffect(() => {
-    search("Banepa")
-  }, [])
+    search("Banepa");
+  }, []);
 
   return (
     <main className="weather">
@@ -38,7 +44,7 @@ function Weather() {
       <section className="weather-details">
         <img src={clear_icon} alt="" className="weather-icon" />
         <p className="temperature">16 C</p>
-        <p className="location">London</p>
+        <p className="location">Banepa</p>
       </section>
 
       <section className="weather-data">
